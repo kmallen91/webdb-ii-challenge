@@ -19,7 +19,7 @@ server.get('/cars', (req, res) => {
 
 server.post('/cars', (req, res) => {
     db
-        .insert(req.body, 'id')
+        .insert(req.body)
         .into('cars')
         .then(car => res.status(201).json(car))
         .catch(err => res.status(500).json({error: `error entering information`}))
